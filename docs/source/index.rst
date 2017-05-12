@@ -47,8 +47,11 @@ store
 
 .. code-block:: python
 
+    from azure.datalake.store import lib
+    from azure.datalake.store import core
+    
     token = lib.auth(tenant_id, username, password)
-    adl = core.AzureDLFileSystem(store_name, token)
+    adl = core.AzureDLFileSystem(token, store_name=store_name)
     # alternatively, adl = core.AzureDLFileSystem()
     # uses environment variables
 
